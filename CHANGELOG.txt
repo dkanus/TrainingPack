@@ -1,0 +1,110 @@
+# Change Log
+All notable changes to this project will be documented in this file.
+Weapon and perk changes are described relative to ScrN versions.
+
+## [Version 0.2.5 "Hotfix"] - 24.10.2015
+### Fixed
+- Fixed (hopefully) issues with 'ZEDRULES' command screwing the default collection
+- Fixed bug that stopped zeds from spawning when their health was changed
+
+## [Version 0.2.4 "Head-zones and zed replacing comeback"] - 22.10.2015
+### Added
+- SafeGuard now counts rescues during current wave separately
+- SafeGuard now has options to restore ammo and fill-up magazines upon rescue
+- 'HITBOXES' mutate command for displaying zeds' head hit-boxes was added
+- 'GODAMMO' mutate command for automate ammo replenishment
+- 'MAXZEDS' mutate command for setting maximal allowed amount of zeds on the map
+- 'FILL' option to 'AMMO' mutate command that fills up magazines of player's weapons
+### Changed
+- 'SLOMO' command now also cancels current zed-time
+### Fixed
+- Repaired and returned 'ZEDRULES' command
+- Now 'KILL' actually can only kill specified zed type
+- Now 'FINALWAVE' should properly disable patriarch's wave in ome situations it didn't before
+
+## [Version 0.2.3 "Hotfix"] - 18.10.2015
+### Fixed
+- Small damage no longer insta-triggers demigod mode or safeguard
+- Temporarily removed 'ZEDRULES' command that was causing major bug
+
+## [Version 0.2.2 "Zed replacing + other improvements"] - 18.10.2015
+### Added
+- 'bOnlyPlayers' mutator option that allows restricting access to commands only to actual players
+- 'ALTSPEED' mutate command for setting an alternative speed value, that can be used in 'SLOMO' command
+- 'ALT' option for 'SLOMO' command, that sets current speed to the value, remembered by 'ALTSPEED' command
+- 'CLEAN' mutate command for removing various garbage from the map
+- 'ZEDRULES' mutate command that allows adding rules that replace some zed types with others without the need to restart the map
+- 'RESTART' mutate command that restarts current wave
+- 'ON/OFF' option to 'HEALTH' mutate command that allows to activate/deactivate health scaling
+- 'REACTION' option to 'SAFEGUARD' mutate command that allows to choose one of four ways to react to player nearly dying
+- 'QUICK' and 'NOW' options to 'SKIP' mutate command that allow to immediately skip trader time, without having to wait last 5 seconds
+- 'VANILLA' modifier to 'FAKED' mutate command that allows to set amount of faked players in a vanilla-like way
+- 'AUTOPAUSE ON/OFF' option to 'TRADETIME' mutate command that allows to pause trader time at the end of every wave
+- 'KILL' command now can accept zed class or alias as a parameter in case player wants to kill only zeds of certain type
+- Demi-god mode, that saves player from deadly attacks with 1 HP
+### Changed
+- SafeGuard will now remove bile and burning effects upon rescue
+- Skipping wave/trader should now work in some circumstances it was previously ignored
+- Changing next wave is now also a cheat when you go back to repeat a previous wave
+- Player can now specify what type of zed he wants to kill in 'KILL' mutate command
+- Speed set by a 'SLOMO' command is restored after leaving zed-time
+- Safeguard will now announce from what player was saved
+- Lower health bound is now forced by default
+### Fixed
+- God mode and safeguard now take armor protection in consideration
+- God mode and safeguard now again work in 'TrainNiceGT' game type
+- Bug that caused mutator to always call a cheat on patriarch spawn
+
+## [Version 0.2.1 "Hotfix"] - 06.08.2015
+### Fixed
+- Now compatible with NicePack ver. 0.2.6
+
+## [Version 0.2 "First update"] - ??.??.????
+### Added
+- Added support for other kinds of aliases, not just weapon ones (but only zed aliases were added so far).
+- Added 'format' command that allows to configure how console messages are displayed.
+- Added 'help' command that provides information about commands, aliases system and whatever else will be added in future.
+- Added 'lock' command that allows to lock cheats from being used until lock is lifted.
+- Added 'healthrules' command that allows to zed health per each zed type separately.
+- Added 'forcehealth' command that allows for forcing zed's health to be at least on the level with current amount of alive players, regardless of the settings.
+- Custom aliases groups support; users can now use any group names for aliases and set their priority in config file.
+- Zed health can be adjusted for head and body separately.
+- Fuel (for zeds from NicePack) correctly scales with health.
+### Changed
+- 'wave size #' command sequence changed to 'wavesize #'.
+- 'trade' command renamed into 'tradetime'
+- Tweaked display of settings in 'pref' command.
+- Console messages from 'TrainingPack' now support colour and breaking long messages into several lines.
+
+## [Version 0.1 "First release"] - a while ago
+### Added
+- Command to disable zed-time.
+- Command to setup amount of faked players.
+- Command to change max and min level (ScrN balance only).
+- Command to change health level of zeds.
+- Command to set speed of the game.
+- Command to give/take away money.
+- Command to replenish ammunition.
+- Command to give player armor (in ScrN balance type of armor can be specified).
+- Command to give player a weapon.
+- Support for weapon aliases (must be defined in config file) for give weapon command.
+- Command to skip wave or a trader
+- Command to set next wave.
+- Command to set amount of zeds in current wave.
+- Command to kill all zeds in current wave.
+- Command to restore player's health.
+- Command to pause a game.
+- Command to pause trader time countdown (without pausing a game).
+- Command to adjust spawn rate.
+- Command to activate/deactivate god mode.
+- Command to show/hide zed's health bars regardless of perk.
+- Command to respawn doors.
+- Command to weld doors to a certain value (either all or locked ones).
+- Command to make zeds ignore welded doors.
+- Safeguard system that replenishes player's health and armor the moment he's about to get killed and (optionally) kills zeds around him.
+- Cheat tracker that remember which cheats and how many times were used during wave/game.
+
+### Known bugs and issues
+- Safeguard sometimes activates in situations where player would've survived.
+- Safeguard activating because of brutes crashes the server.
+- On many maps blocked doors cause rather erratic zeds behaviour.
